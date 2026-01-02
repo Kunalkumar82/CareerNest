@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-slate-900 bg-slate-50 dark:bg-slate-900 dark:text-slate-50 transition-colors duration-200;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl dark:bg-slate-800/70 dark:border-slate-700/50;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 dark:bg-slate-800/80 dark:border-slate-700 dark:shadow-none;
+  }
+
+  .btn-primary {
+    @apply bg-slate-900 hover:bg-slate-800 text-white font-medium py-2.5 px-5 rounded-lg shadow-lg shadow-slate-200 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white dark:shadow-none;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-slate-50 text-slate-700 font-medium py-2.5 px-5 rounded-lg border border-slate-200 shadow-sm hover:shadow active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-750;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg bg-white border border-slate-200 focus:border-slate-400 focus:ring-4 focus:ring-slate-100 outline-none transition-all duration-200 text-slate-700 placeholder:text-slate-400 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200 dark:placeholder:text-slate-500 dark:focus:border-slate-500 dark:focus:ring-slate-800;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100/50 transition-colors duration-200 font-medium dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-slate-800;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-white text-slate-900 shadow-sm border border-slate-100 dark:bg-slate-800 dark:text-white dark:border-slate-700;
+  }
+}
+
+/* Custom Scrollbar for nicer feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full dark:bg-slate-700;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-300 dark:bg-slate-600;
+}
